@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Uri::Health::VERSION
   spec.authors       = ['Ben Snape']
   spec.email         = ["ben.snape@itv.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Monitor the health of URI's}
+  spec.description   = %q{Easily monitor the health of arbitrary URI's defined in YAML config}
   spec.homepage      = 'http://www.bensnape.com'
   spec.license       = 'MIT'
 
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.5'
   spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
 end

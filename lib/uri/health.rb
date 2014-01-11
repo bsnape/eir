@@ -1,4 +1,4 @@
-require "uri/health/version"
+require 'uri/health/version'
 
 module Uri
   module Health
