@@ -4,8 +4,8 @@ module Uri
 
     class Status
 
-      def initialize(uris)
-        @uris = uris
+      def initialize(path_to_yaml)
+        @uris = YAML.load_file(path_to_yaml)
       end
 
       def go
