@@ -1,7 +1,4 @@
-require 'uri/health/version'
+require_relative 'health/version'
+require_relative 'health/status'
 
-module Uri
-  module Health
-    # Your code goes here...
-  end
-end
+require 'httparty'
