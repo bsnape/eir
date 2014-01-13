@@ -1,24 +1,39 @@
 # Uri::Health
 
-TODO: Write a gem description
+A really easy way to monitor the health of a list of endpoints over time.
 
-## Installation
+## Installation and Usage
 
-Add this line to your application's Gemfile:
+Add to your Gemfile:
 
     gem 'uri-health'
 
-And then execute:
+Create a YAML file of the URIs you wish to monitor:
 
-    $ bundle
+    - http://www.google.co.uk
+    - http://www.yahoo.co.uk
+    - http://www.itv.com
+    - http://www.itv.com/news/uk/
 
-Or install it yourself as:
+Include the path to your YAML file when executing the code:
 
-    $ gem install uri-health
+    Uri::Health::Status.new('spec/support/uris.yaml').go
 
-## Usage
+The status codes are returned in a hash and written to `uri-health/last_run.json`:
 
-TODO: Write usage instructions here
+    {
+        "http://www.google.co.uk": 200,
+        "http://www.yahoo.co.uk": 200,
+        "http://www.itv.com": 200,
+        "http://www.itv.com/news/uk/": 200
+    }
+
+## TODO
+
+1. Introduce polling over time
+2. Test connection error cases
+3. Parse URIs
+4. A pretty report
 
 ## Contributing
 
