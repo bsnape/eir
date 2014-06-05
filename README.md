@@ -13,13 +13,12 @@ Create a YAML file of the URIs you wish to monitor:
     - http://www.google.co.uk
     - http://www.yahoo.co.uk
     - http://www.itv.com
-    - http://www.itv.com/news/uk/
 
 Include the path to your YAML file when executing the code:
 
     Uri::Health::Status.new('spec/support/uris.yaml').go
 
-The status codes are returned in a hash and written to `uri-health/last_run.json`:
+The status codes are returned in a hash:
 
     {
         "http://www.google.co.uk": 200,

@@ -2,9 +2,18 @@ require_relative 'spec_helper'
 
 describe Uri::Health do
 
-  it 'should read URIs from a YAML file and return a hash with status codes' do
-    responses = Uri::Health::Status.new('spec/support/uris.yaml').go
-    responses.each { |uri, status_code| status_code.should be_a_kind_of(Fixnum) }
+  before(:each) do
+    @uri_health = Uri::Health::Status.new('spec/support/uris.yaml')
+  end
+
+  it 'should read URIs from a YAML file' do
+    @uri_health.uris.should == %w(http://www.google.co.uk http://www.yahoo.co.uk http://www.itv.com)
+  end
+
+  it 'should make an HTTP request for each URI' do
+    @uri_health.stub(:get_http_response_code).and_return(200)
+    responses = @uri_health.go
+    responses.each { |uri, status_code| status_code.should == 200 }
   end
 
 end
