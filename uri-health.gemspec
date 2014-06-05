@@ -4,21 +4,21 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'uri/health/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'uri-health'
-  spec.version       = Uri::Health::VERSION
-  spec.authors       = ['Ben Snape']
-  spec.email         = %w(bsnape@gmail.com)
-  spec.summary       = %w{Monitor the health of URI's}
-  spec.description   = %w{Easily monitor the health of arbitrary URI's defined in YAML config}
-  spec.homepage      = 'http://www.bensnape.com'
-  spec.license       = 'MIT'
+  spec.name        = 'uri-health'
+  spec.version     = Uri::Health::VERSION
+  spec.authors     = ['Ben Snape']
+  spec.email       = %w(bsnape@gmail.com)
+  spec.summary     = %w{Monitor the health of URI's}
+  spec.description = %w{Easily monitor the health of arbitrary URI's defined in YAML config}
+  spec.homepage    = 'http://www.bensnape.com'
+  spec.license     = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = %w(lib)
 
-  spec.add_dependency 'httparty', '~> 0'
+  spec.add_dependency 'rest-client', '~> 1.6.7'
 
   spec.add_development_dependency 'bundler', '~> 1.5'
   spec.add_development_dependency 'rake', '~> 10'

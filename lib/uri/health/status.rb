@@ -9,7 +9,7 @@ module Uri
       end
 
       def get_http_response_code(uri)
-        HTTParty.get(uri).code
+        RestClient.get(uri).code
       end
 
       def go
