@@ -3,7 +3,7 @@ require_relative 'spec_helper'
 describe Uri::Health do
 
   before(:each) do
-    @uri_health = Uri::Health::Status.new('spec/support/uris.yaml')
+    @uri_health = Uri::Health::Status.new
   end
 
   it 'should read URIs from a YAML file' do
@@ -14,6 +14,11 @@ describe Uri::Health do
     @uri_health.stub(:get_http_response_code).and_return(200)
     responses = @uri_health.go
     responses.each { |uri, status_code| status_code.should == 200 }
+  end
+
+  it 'should start and stop without errors' do
+    @uri_health.start
+    @uri_health.stop
   end
 
 end
