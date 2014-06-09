@@ -1,1 +1,2 @@
-%h1= @responses
+- @responses.each do |uri, code|
+    %p= "#{uri} #{code}"
