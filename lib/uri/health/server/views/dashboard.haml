@@ -1,4 +1,5 @@
 #content
+  %p= "Last updated: #{Time.now.strftime('%H:%M:%S')}"
   .results
     #status-code
       - @responses.each do |uri, code|
