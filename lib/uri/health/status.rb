@@ -24,8 +24,10 @@ module Uri
 
       def go
         responses = {}
-        @uris.each do |uri|
-          responses.merge!({ uri => get_http_response_code(uri) })
+        @uris.each do |uri_name_hash|
+          uri_name_hash.each do |uri, name|
+            responses.merge!({ name => get_http_response_code(uri) })
+          end
         end
 
         responses
