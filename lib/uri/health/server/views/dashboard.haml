@@ -1,2 +1,10 @@
-- @responses.each do |uri, code|
-    %p= "#{uri} #{code}"
+#content
+  .results
+    #status-code
+      - @responses.each do |uri, code|
+        - if code == 200
+          .success
+            %p= uri
+        - else
+          .failure
+            %p= uri
