@@ -1,8 +1,10 @@
-require_relative 'health/version'
-require_relative 'health/status'
-require_relative 'health/server/app'
-
 require 'rest_client'
 require 'yaml'
 require 'sinatra'
 require 'haml'
+require 'puma'
+
+require_relative 'health/version'
+require_relative 'health/server'
+require_relative 'health/request'
+require_relative 'health/server/app'

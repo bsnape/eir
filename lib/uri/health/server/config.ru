@@ -1,5 +1,4 @@
-#\ -D lib/uri/health/server/app.rb -p 8700
-require 'sinatra'
+#!/usr/bin/env ruby
 
 require_relative 'app'
 require_relative '../../health'

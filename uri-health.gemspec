@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'thin', '~> 1.6.2'
   spec.add_dependency 'sinatra', '~> 1.4.5'
   spec.add_dependency 'haml', '~> 4'
+  spec.add_dependency 'puma', '~> 2.8.2'
 
   spec.add_development_dependency 'bundler', '~> 1.5'
   spec.add_development_dependency 'rake', '~> 10'
