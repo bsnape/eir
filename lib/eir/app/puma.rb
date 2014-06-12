@@ -7,6 +7,6 @@ daemonize true
 
 port 8700
 
-stdout_log = "#{CURRENT_DIRECTORY}/access.log"
-stderr_log = "#{CURRENT_DIRECTORY}/error.log"
+stdout_log = "#{CURRENT_DIRECTORY}/eir_access.log"
+stderr_log = "#{CURRENT_DIRECTORY}/eir_error.log"
 stdout_redirect(stdout_log, stderr_log, true)
