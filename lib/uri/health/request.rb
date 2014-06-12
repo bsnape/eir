@@ -2,12 +2,13 @@ module Uri
   module Health
     class Request
 
-      attr_reader :uris, :server_url
+      attr_reader :server_url
+      attr_accessor :uris
 
       def initialize
         path_to_yaml = find_yaml
-        @uris       = validate_yaml path_to_yaml
-        @server_url = 'http://localhost:8700'
+        @uris        = validate_yaml path_to_yaml
+        @server_url  = 'http://localhost:8700'
       end
 
       def find_yaml
@@ -30,7 +31,13 @@ module Uri
       end
 
       def get_http_response_code(uri)
-        RestClient.get(uri).code
+        begin
+          Timeout.timeout(5) do
+            request(uri).code
+          end
+        rescue
+          false
+        end
       end
 
       def go
@@ -42,6 +49,12 @@ module Uri
         end
 
         responses
+      end
+
+      private
+
+      def request(uri)
+        RestClient.get uri
       end
 
     end
