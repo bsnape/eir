@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require_relative 'app'
-require_relative '../../health'
+require_relative '../../eir'
 
 run App

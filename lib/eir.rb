@@ -1,0 +1,10 @@
+require 'rest_client'
+require 'yaml'
+require 'sinatra'
+require 'haml'
+require 'puma'
+
+require_relative 'eir/version'
+require_relative 'eir/server'
+require_relative 'eir/request'
+require_relative 'eir/app/app'

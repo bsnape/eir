@@ -16,8 +16,8 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    @uri_health_request = Uri::Health::Request.new
-    @responses          = @uri_health_request.go
+    @eir = Eir::Request.new
+    @responses          = @eir.go
     haml :dashboard, :layout => (request.xhr? ? false : :layout)
   end
 

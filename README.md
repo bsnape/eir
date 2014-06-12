@@ -1,4 +1,4 @@
-# Uri::Health
+# Eir
 
 A really easy way to monitor the health of a list of endpoints over time.
 
@@ -6,7 +6,7 @@ A really easy way to monitor the health of a list of endpoints over time.
 
 Install:
 
-    $ gem install uri-health
+    $ gem install eir
 
 In a new directory, create a `uris.yaml` YAML file of the URIs you wish to monitor:
 
@@ -16,7 +16,7 @@ In a new directory, create a `uris.yaml` YAML file of the URIs you wish to monit
 
 From the console, navigate to your new directory and simply run:
 
-    $ uri-health
+    $ eir
 
 A lightweight Sinatra app will start at `http://localhost:8700`.
 
@@ -29,7 +29,7 @@ A lightweight Sinatra app will start at `http://localhost:8700`.
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/uri-health/fork )
+1. Fork it ( http://github.com/<my-github-username>/eir/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'uri/health/version'
+require 'eir/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'uri-health'
-  spec.version     = Uri::Health::VERSION
+  spec.name        = 'eir'
+  spec.version     = Eir::VERSION
   spec.authors     = ['Ben Snape']
   spec.email       = %w(bsnape@gmail.com)
   spec.summary     = %w{Monitor the health of URI's}
@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w(lib)
 
   spec.add_dependency 'rest-client', '~> 1.6.7'
-  spec.add_dependency 'thin', '~> 1.6.2'
   spec.add_dependency 'sinatra', '~> 1.4.5'
   spec.add_dependency 'haml', '~> 4'
   spec.add_dependency 'puma', '~> 2.8.2'
