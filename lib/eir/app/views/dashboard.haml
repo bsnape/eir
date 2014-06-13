@@ -1,5 +1,5 @@
+%p= "Last updated: #{Time.now.strftime('%H:%M:%S')}"
 #content
-  %p= "Last updated: #{Time.now.strftime('%H:%M:%S')}"
   .results
     - @responses.each do |uri, code|
       .result
