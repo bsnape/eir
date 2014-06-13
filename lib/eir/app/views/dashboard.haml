@@ -1,8 +1,8 @@
 #content
   %p= "Last updated: #{Time.now.strftime('%H:%M:%S')}"
   .results
-    #status-code
-      - @responses.each do |uri, code|
+    - @responses.each do |uri, code|
+      .result
         - if code == 200
           .success
             %p= uri
