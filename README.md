@@ -40,3 +40,4 @@ A successfully running app should have a directory structure like this:
 1. Test connection error cases
 2. Parse/validate URIs
 3. Validate YAML
+4. Some decent CSS/JS (please help!)
