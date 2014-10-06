@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-$:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib') unless $LOAD_PATH.include?(File.dirname(__FILE__) + '/../lib')
 
 require 'bundler/setup'
 require 'eir'
@@ -7,7 +7,7 @@ require 'colorize'
 
 if ARGV.first == '--to-console'
   Eir::Request.new.go.each do |service, status_code|
-    puts (status_code == 200) ? service.colorize(:green) : service.colorize(:red) 
+    puts (status_code == 200) ? service.colorize(:green) : service.colorize(:red)
   end
 else
   Eir::Server.new.start

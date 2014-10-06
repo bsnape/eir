@@ -18,11 +18,9 @@ module Eir
     end
 
     def status
-      begin
-        RestClient.get("#{@server_url}/status").code
-      rescue Errno::ECONNREFUSED
-        false
-      end
+      RestClient.get("#{@server_url}/status").code
+    rescue Errno::ECONNREFUSED
+      false
     end
 
     def start

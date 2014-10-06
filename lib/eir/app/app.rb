@@ -18,7 +18,7 @@ class App < Sinatra::Base
   get '/' do
     @eir       = Eir::Request.new
     @responses = @eir.go
-    haml :dashboard, :layout => (request.xhr? ? false : :layout)
+    haml :dashboard, layout: (request.xhr? ? false : :layout)
   end
 
 end

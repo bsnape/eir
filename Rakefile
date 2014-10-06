@@ -4,4 +4,4 @@ require_relative 'lib/eir'
 
 RSpec::Core::RakeTask.new
 
-task :default => :spec
+task default: :spec

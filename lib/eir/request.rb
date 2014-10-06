@@ -24,26 +24,24 @@ module Eir
     def validate_yaml(path_to_yaml)
       invalid_yaml_error = 'YAML structure incorrect. Please refer to the README.'
       yaml               = YAML.load_file path_to_yaml
-      raise invalid_yaml_error unless yaml.is_a? Array
-      yaml.each { |hash| raise invalid_yaml_error unless hash.is_a? Hash }
+      fail(invalid_yaml_error) unless yaml.is_a? Array
+      yaml.each { |hash| fail(invalid_yaml_error) unless hash.is_a? Hash }
       yaml
     end
 
     def get_http_response_code(uri)
-      begin
-        Timeout.timeout(5) do
-          request(uri).code
-        end
-      rescue
-        false
+      Timeout.timeout(5) do
+        request(uri).code
       end
+    rescue
+      false
     end
 
     def go
       responses = {}
       @uris.each do |uri_name_hash|
         uri_name_hash.each do |uri, name|
-          responses.merge!({ name => get_http_response_code(uri) })
+          responses.merge!(name => get_http_response_code(uri))
         end
       end
 
