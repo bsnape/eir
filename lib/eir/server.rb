@@ -1,6 +1,5 @@
 module Eir
   class Server
-
     def initialize
       @server_url = 'http://localhost:8700'
     end
@@ -36,6 +35,5 @@ module Eir
       `kill -9 #{pid}`
       Timeout.timeout(10, FailedToStopSinatraError) { sleep 1 until status == false }
     end
-
   end
 end

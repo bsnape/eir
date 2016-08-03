@@ -1,6 +1,5 @@
 module Eir
   class Request
-
     attr_reader :server_url
     attr_accessor :uris
 
@@ -53,6 +52,5 @@ module Eir
     def request(uri)
       RestClient.get uri
     end
-
   end
 end
