@@ -5,7 +5,6 @@ require 'logger'
 configure { set :server, :puma }
 
 class App < Sinatra::Base
-
   configure do
     set :root, File.dirname(__FILE__)
     enable :logging
@@ -20,5 +19,4 @@ class App < Sinatra::Base
     @responses = @eir.go
     haml :dashboard, layout: (request.xhr? ? false : :layout)
   end
-
 end
